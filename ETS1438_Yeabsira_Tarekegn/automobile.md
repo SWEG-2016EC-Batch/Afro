@@ -10,3 +10,19 @@ and miles_per_gallon respectively.
 Step3: Calculate the total miles = capacity*miles_per_gallon.  
 Step4: Output the total miles.  
 Step5: End. 
+
+flowchart
+```mermaid
+flowchart TD
+    Start([Start])
+    Input1["Enter the fuel tank capacity in gallons"]
+    Input2["Enter the miles per gallon"]
+    Calc["Calculate total miles = capacity * miles_per_gallon"]
+    Output["Print total miles"]
+    End([End])
+
+    Start --> Input1
+    Input1 --> Input2
+    Input2 --> Calc
+    Calc --> Output
+    Output --> End
