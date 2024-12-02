@@ -1,4 +1,4 @@
-# Serial transmission 
+# Send file
 
 
 A serial transmission line can transmit 960 characters a second. Write a program that will calculate how long
