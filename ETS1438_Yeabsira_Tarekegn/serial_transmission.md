@@ -20,3 +20,27 @@ Step 5:Compute deductions:
 Step 6: Calculate the net salary as (gross salary - pension deduction - tax deduction).
 Step 7:Print the gross salary, net salary and bonus payment.
 Step 8:End.
+
+flowchart
+```mermaid
+flowchart TD
+    Start([Start])
+    Input1["Read the file size in MB (fileSizeMB)"]
+    ConvertToBytes["Convert fileSizeMB to bytes: fileSizeBytes = fileSizeMB * 1024 * 1024"]
+    CalculateTime["Calculate time in seconds: timeinseconds = fileSizeBytes / 960"]
+    CalculateDays["Calculate time in days: timeindays = timeinseconds / 86400"]
+    CalculateHours["Calculate time in hours: timeinhours = (timeinseconds % 86400) / 3600"]
+    CalculateMinutes["Calculate time in minutes: timeinminutes = (timeinseconds % 3600) / 60"]
+    CalculateSeconds["Calculate remaining seconds: timeinseconds = timeinseconds % 60"]
+    OutputTime["Output the result as: timeindays days, timeinhours hours, timeinminutes minutes, timeinseconds seconds"]
+    End([End])
+
+    Start --> Input1
+    Input1 --> ConvertToBytes
+    ConvertToBytes --> CalculateTime
+    CalculateTime --> CalculateDays
+    CalculateDays --> CalculateHours
+    CalculateHours --> CalculateMinutes
+    CalculateMinutes --> CalculateSeconds
+    CalculateSeconds --> OutputTime
+    OutputTime --> End
