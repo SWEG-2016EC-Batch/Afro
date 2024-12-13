@@ -29,26 +29,28 @@ flowchart TD
     A[Start] --> B[Input marks for test, quiz, project, assignment, and final exam]
     B --> C[Calculate total mark = test + quiz + project + assignment + final]
     C --> D[Output total mark]
-    D --> E{mark >= 90?}
-    E -->|Yes| F[Output "Your grade is A+"]
-    E -->|No| G{mark >= 80?}
-    G -->|Yes| H[Output "Your grade is A"]
-    G -->|No| I{mark >= 75?}
-    I -->|Yes| J[Output "Your grade is B+"]
-    I -->|No| K{mark >= 60?}
-    K -->|Yes| L[Output "Your grade is B"]
-    K -->|No| M{mark >= 55?}
-    M -->|Yes| N[Output "Your grade is C+"]
-    M -->|No| O{mark >= 45?}
-    O -->|Yes| P[Output "Your grade is C"]
-    O -->|No| Q{mark >= 30?}
-    Q -->|Yes| R[Output "Your grade is D"]
-    Q -->|No| S[Output "Your grade is F"]
-    R --> T[Stop]
-    S --> T
-    P --> T
-    N --> T
-    L --> T
-    J --> T
+    D --> E{Is mark >= 90?}
+    E -->|Yes| F[Grade: A+]
+    E -->|No| G{Is mark >= 80?}
+    G -->|Yes| H[Grade: A]
+    G -->|No| I{Is mark >= 75?}
+    I -->|Yes| J[Grade: B+]
+    I -->|No| K{Is mark >= 60?}
+    K -->|Yes| L[Grade: B]
+    K -->|No| M{Is mark >= 55?}
+    M -->|Yes| N[Grade: C+]
+    M -->|No| O{Is mark >= 45?}
+    O -->|Yes| P[Grade: C]
+    O -->|No| Q{Is mark >= 30?}
+    Q -->|Yes| R[Grade: D]
+    Q -->|No| S[Grade: F]
+    F --> T[Stop]
     H --> T
-    F --> T
+    J --> T
+    L --> T
+    N --> T
+    P --> T
+    R --> T
+    S --> T
+
+
