@@ -51,11 +51,11 @@ flowchart TD
     A[Start] --> B[Display Pattern Menu]
     B --> C{Choose Pattern?}
     C --> D1[1. Grid of numbers]
-    C --> D2[2. Grid of alphabets (A to X)]
+    C --> D2[2. Grid of alphabets A to X]
     C --> D3[3. Left half pyramid of numbers]
     C --> D4[4. Right half pyramid of numbers]
     C --> D5[5. Half pyramid of uppercase letters]
-    C --> D6[6. Grid of lowercase letters (a to e)]
+    C --> D6[6. Grid of lowercase letters a to e]
     C --> D7[7. Hollow rectangle]
     C --> D8[8. Inverted half pyramid]
     C --> D9[9. Hollow inverted half pyramid]
@@ -64,7 +64,7 @@ flowchart TD
     C --> D12[12. Hollow full pyramid]
     C --> D13[Invalid Input]
     D1 --> Q[Print Grid of numbers]
-    D2 --> R[Print Grid of alphabets from A to X]
+    D2 --> R[Print Grid of alphabets A to X]
     D3 --> S[Print Left half pyramid of numbers]
     D4 --> T[Print Right half pyramid of numbers]
     D5 --> U[Print Half pyramid of uppercase letters]
@@ -76,7 +76,7 @@ flowchart TD
     D11 --> AA[Print Inverted full pyramid]
     D12 --> AB[Print Hollow full pyramid]
     D13 --> AC[Display Invalid Input]
-    Q --> AD[Repeat Menu? (y/n)]
+    Q --> AD[Repeat Menu? y/n]
     R --> AD
     S --> AD
     T --> AD
@@ -91,6 +91,3 @@ flowchart TD
     AC --> AD
     AD --> B[Display Pattern Menu]
     AD --> AE[Exit]
-
-
-
