@@ -177,6 +177,6 @@ int main() {
         cin >> choice;
     } while (choice == 'y'  choice == 'Y');
     
-    cout << "Thank you. << endl;
+    cout << "Thank you." << endl;
     return 0;
 }
