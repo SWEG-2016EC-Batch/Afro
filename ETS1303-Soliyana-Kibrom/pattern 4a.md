@@ -50,33 +50,46 @@ operation/process
 flowchart TD
     A[Start] --> B[Display Pattern Menu]
     B --> C{Choose Pattern?}
-    C --> D[1. Solid Right Triangle]
-    C --> E[2. Right Triangle with Right-angled Stars]
-    C --> F[3. Hollow Right Triangle]
-    C --> G[4. Inverted Right Triangle]
-    C --> H[5. Hollow Inverted Right Triangle]
-    C --> I[6. Full Pyramid]
-    C --> J[7. Inverted Hollow Triangle]
-    C --> K[8. Inverted Half Pyramid]
-    C --> L[9. Hollow Inverted Half Pyramid]
-    C --> M[10. Full Pyramid]
-    C --> N[11. Inverted Full Pyramid]
-    C --> O[12. Hollow Full Pyramid]
-    C --> P[Invalid Input]
-    D --> Q[Print Solid Right Triangle]
-    E --> R[Print Right Triangle with Right-angled Stars]
-    F --> S[Print Hollow Right Triangle]
-    G --> T[Print Inverted Right Triangle]
-    H --> U[Print Hollow Inverted Right Triangle]
-    I --> V[Print Full Pyramid]
-    J --> W[Print Inverted Hollow Triangle]
-    K --> X[Print Inverted Half Pyramid]
-    L --> Y[Print Hollow Inverted Half Pyramid]
-    M --> Z[Print Full Pyramid]
-    N --> AA[Print Inverted Full Pyramid]
-    O --> AB[Print Hollow Full Pyramid]
-    P --> AC[Display Invalid Input]
-    C --> AD[Repeat Menu? (y/n)]
+    C --> D1[1. Grid of numbers]
+    C --> D2[2. Grid of alphabets A to X]
+    C --> D3[3. Left half pyramid of numbers]
+    C --> D4[4. Right half pyramid of numbers]
+    C --> D5[5. Half pyramid of uppercase letters]
+    C --> D6[6. Grid of lowercase letters a to e]
+    C --> D7[7. Hollow rectangle]
+    C --> D8[8. Inverted half pyramid]
+    C --> D9[9. Hollow inverted half pyramid]
+    C --> D10[10. Full pyramid]
+    C --> D11[11. Inverted full pyramid]
+    C --> D12[12. Hollow full pyramid]
+    C --> D13[Invalid Input]
+    D1 --> Q[Print Grid of numbers]
+    D2 --> R[Print Grid of alphabets A to X]
+    D3 --> S[Print Left half pyramid of numbers]
+    D4 --> T[Print Right half pyramid of numbers]
+    D5 --> U[Print Half pyramid of uppercase letters]
+    D6 --> V[Print Grid of lowercase letters a to e]
+    D7 --> W[Print Hollow rectangle]
+    D8 --> X[Print Inverted half pyramid]
+    D9 --> Y[Print Hollow inverted half pyramid]
+    D10 --> Z[Print Full pyramid]
+    D11 --> AA[Print Inverted full pyramid]
+    D12 --> AB[Print Hollow full pyramid]
+    D13 --> AC[Display Invalid Input]
+    Q --> AD[Repeat Menu? y/n]
+    R --> AD
+    S --> AD
+    T --> AD
+    U --> AD
+    V --> AD
+    W --> AD
+    X --> AD
+    Y --> AD
+    Z --> AD
+    AA --> AD
+    AB --> AD
+    AC --> AD
     AD --> B[Display Pattern Menu]
     AD --> AE[Exit]
+
 
