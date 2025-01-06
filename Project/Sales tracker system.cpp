@@ -54,6 +54,8 @@ int main(){
         cout << "\nSales Tracker System Menu:\n";
         cout << "1. Record Sales Slip\n";
         cout << "2. Generate End of Day Report\n";
+	cout << "3. Search Salesperson Record\n";
+        cout << "4. Search Product Record\n";    
 	cout << "5. View Top and Least Selling Salesperson\n";
         cout << "6. Generate Monthly Report\n";
         line:
@@ -140,8 +142,53 @@ int main(){
             }
             cout << setw(10) << fixed << setprecision(2) << total;
             cout << "  \n";
-            }        
-		else if (choice == 5) {
+            } else if (choice == 3) {
+            int salesperson;
+            cout << "Enter salesperson number (1-" << numSalespeople << ") to search: ";
+            cin >> salesperson;
+            if (salesperson >= 1 && salesperson <= numSalespeople) {
+                cout << "Salesperson " << salespersonNames[salesperson - 1] << " Record:\n";
+                cout << "Sex: " << salespersonSex[salesperson - 1] << "\n";
+                cout << "Address: " << salespersonAddresses[salesperson - 1] << "\n";
+                cout << "\nSales for the Previous Month:\n";
+                for (int i = 0; i < numProducts; i++) {
+                    double total = 0;
+                    for (int day = 0; day < MAX_DAYS; day++) {
+                        total += salesData[day][salesperson - 1][i];
+                    }
+                    cout << "Product " << i + 1 << ": " << total << "\n";
+                }
+                double totalSalesPerson = 0;
+                for (int day = 0; day < MAX_DAYS; day++) {
+                    totalSalesPerson += totalSales[day][salesperson - 1];
+                }
+                cout << "Total Sales: " << totalSalesPerson << "\n";
+                cout << "Bonus: " << totalSalesPerson * 0.05 << "\n";
+            } else {
+                cout << "Invalid salesperson number.\n";
+            }
+        } else if (choice == 4) {
+            int product;
+            cout << "Enter product number (1-" << numProducts << ") to search: ";
+            cin >> product;
+            if (product >= 1 && product <= numProducts) {
+                cout << "Product " << product << " Record:\n";
+                for (int i = 0; i < numSalespeople; i++) {
+                    double total = 0;
+                    for (int day = 0; day < MAX_DAYS; day++) {
+                        total += salesData[day][i][product - 1];
+                    }
+                    cout << "Salesperson " << salespersonNames[i] << ": " << total << "\n";
+                }
+                double totalProduct = 0;
+                for (int day = 0; day < MAX_DAYS; day++) {
+                    totalProduct += totalProducts[day][product - 1];
+                }
+                cout << "Total Sales: " << totalProduct << "\n";
+            } else {
+                cout << "Invalid product number.\n";
+            }
+	    }else if (choice == 5) {
             int topSalesperson = 0, leastSalesperson = 0;
             double maxSales = 0, minSales = 1e9;
 
