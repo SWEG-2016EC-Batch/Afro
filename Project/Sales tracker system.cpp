@@ -58,6 +58,8 @@ int main(){
         cout << "4. Search Product Record\n";    
 	cout << "5. View Top and Least Selling Salesperson\n";
         cout << "6. Generate Monthly Report\n";
+	cout << "7. Add Salesperson\n";
+        cout << "8. Add Product\n";   
         line:
         cout << "Enter your choice: ";
         cin >> choice;
@@ -237,7 +239,35 @@ int main(){
          }
         cout << "\n";
         }
-
+else if (choice == 7) {
+            // Add new salesperson
+            if (numSalespeople < MAX_SALESPEOPLE) {
+                cout << "Enter new salesperson details:\n";
+                cout << "Name: ";
+                cin >> salespersonNames[numSalespeople];
+                cout << "Sex (M/F): ";
+                cin >> salespersonSex[numSalespeople];
+                cout << "Address: ";
+                cin >> salespersonAddresses[numSalespeople];
+                sleep(1);
+                cout<<"Salesperosn added sucessfuly.\n";
+                cout<<"Salesperson number is: "<<numSalespeople+1;
+                numSalespeople++;
+            } else {
+                cout << "Salesperson limit reached.\n";
+            }
+        } else if (choice == 8) {
+            // Add new product
+            if (numProducts < MAX_PRODUCTS) {
+                cout << "Enter new product number: ";
+                cin >> productNumbers[numProducts];
+				sleep(1);
+                cout<<"Product added sucessfuly.";
+                numProducts++;
+            }else{
+            	cout<<"Product limit reached.\n";
+			}
+            
 	    
       cout<<endl;
         sleep(2);
