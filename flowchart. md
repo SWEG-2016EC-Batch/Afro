@@ -1,0 +1,67 @@
+graph TD
+    A[Start System] --> B[Display Welcome Message]
+
+    B --> C[Display Main Menu]
+    
+    C --> D[1. Record Sales Slip]
+    C --> E[2. Generate End of Day Report]
+    C --> F[3. Search Salesperson Record]
+    C --> G[4. Search Product Record]
+    C --> H[5. View Top and Least Selling Salesperson]
+    C --> I[6. Generate Monthly Report]
+    C --> J[7. Add Salesperson]
+    C --> K[8. Add Product]
+    C --> L[9. Modify Salesperson]
+    C --> M[10. Exit]
+
+    D --> N[Enter Date]
+    N --> O[Validate Date Format]
+    O --> P[Check if valid for month]
+    P --> Q[Loop through Salespeople]
+    Q --> R[For each Product]
+    R --> S[Ask for Quantity Sold]
+    S --> T[Calculate Sales Value]
+    T --> U[Record Sales Details]
+    U --> C
+    
+    E --> N[Enter Date]
+    N --> O[Validate Date Format]
+    O --> P[Check if valid for month]
+    P --> V[Calculate Total Sales for selected date]
+    V --> W[Display Sales Report]
+    W --> C
+
+    F --> X[Ask for Salesperson Number]
+    X --> Y[Search Record]
+    Y --> Z[Display Salesperson Record]
+    Z --> C
+
+    G --> AA[Ask for Product Number]
+    AA --> BB[Search Record]
+    BB --> CC[Display Product Sales Record]
+    CC --> C
+
+    H --> DD[Find Top and Least Selling Salesperson]
+    DD --> C
+
+    I --> EE[Generate Monthly Report]
+    EE --> C
+
+    J --> FF[Check Salesperson Limit]
+    FF --> GG[Ask for New Salesperson Details]
+    GG --> HH[Increment Salesperson Count]
+    HH --> C
+
+    K --> II[Check Product Limit]
+    II --> JJ[Ask for New Product Number]
+    JJ --> KK[Increment Product Count]
+    KK --> C
+
+    L --> LL[Ask for Salesperson Number]
+    LL --> MM[Modify Details]
+    MM --> C
+
+    M --> NN[Display Exit Message]
+    NN --> OO[Terminate System]
+
+    OOO[Invalid Choice] --> C
