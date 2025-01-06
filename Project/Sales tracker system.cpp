@@ -68,7 +68,9 @@ int main(){
 	cout << "5. View Top and Least Selling Salesperson\n";
         cout << "6. Generate Monthly Report\n";
 	cout << "7. Add Salesperson\n";
-        cout << "8. Add Product\n";   
+        cout << "8. Add Product\n";  
+        cout << "9. Modify Salesperson\n";
+        cout << "10. Exit\n";
         line:
         cout << "Enter your choice: ";
         cin >> choice;
