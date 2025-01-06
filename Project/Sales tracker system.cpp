@@ -138,10 +138,7 @@ int main(){
             }
             cout << setw(10) << fixed << setprecision(2) << total;
             cout << "  \n";
-            }
-			 cout<<endl;
-        sleep(2);
-    }        
+            }        
 		else if (choice == 5) {
             int topSalesperson = 0, leastSalesperson = 0;
             double maxSales = 0, minSales = 1e9;
@@ -191,5 +188,10 @@ int main(){
          }
         cout << "\n";
         }
+
+	    
+      cout<<endl;
+        sleep(2);
+    }
 	return 0;
 }
