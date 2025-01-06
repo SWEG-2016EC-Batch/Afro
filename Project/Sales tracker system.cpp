@@ -54,6 +54,8 @@ int main(){
         cout << "\nSales Tracker System Menu:\n";
         cout << "1. Record Sales Slip\n";
         cout << "2. Generate End of Day Report\n";
+	cout << "5. View Top and Least Selling Salesperson\n";
+        cout << "6. Generate Monthly Report\n";
         line:
         cout << "Enter your choice: ";
         cin >> choice;
