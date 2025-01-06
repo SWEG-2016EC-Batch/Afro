@@ -142,6 +142,54 @@ int main(){
 			 cout<<endl;
         sleep(2);
     }        
-		
+		else if (choice == 5) {
+            int topSalesperson = 0, leastSalesperson = 0;
+            double maxSales = 0, minSales = 1e9;
+
+            for (int i = 0; i < numSalespeople; i++) {
+                double total = 0;
+                for (int day = 0; day < MAX_DAYS; day++) {
+                    total += totalSales[day][i];
+                }
+                if (total > maxSales) {
+                    maxSales = total;
+                    topSalesperson = i;
+                }
+                if (total < minSales) {
+                    minSales = total;
+                    leastSalesperson = i;
+                }
+            }
+            cout << "Top Selling Salesperson: " << salespersonNames[topSalesperson] << " with sales " << maxSales << "\n";
+            cout << "Least Selling Salesperson: " << salespersonNames[leastSalesperson] << " with sales " << minSales << "\n";
+      } else if (choice == 6) {
+    string month;
+    cout << "Enter month (MM): ";
+    cin >> month;
+    int monthIndex = stoi(month) - 1;  // Convert MM to month index (0-11)
+    cout << "\nMonthly Report for " << month << ":\n";
+    // Display table header
+    cout << setw(10) << "Salesperson |";
+    for (int i = 0; i < numSalespeople; i++) {
+        cout << setw(10) << salespersonNames[i]<<" |";
+    }
+    cout << setw(10) << "Total" << "\n";
+    // Display sales data
+    for (int i = 0; i < numProducts; i++) {
+        cout<<setw(2)<<"";
+        cout << setw(10) << "Product " + to_string(i + 1) + " |";
+        double productTotal = 0;
+        for (int j = 0; j < numSalespeople; j++) {
+            double monthlyTotal = 0;
+            for (int day = 0; day < 30; day++) {
+                monthlyTotal += salesData[monthIndex * 30 + day][j][i];
+            }
+            cout << setw(10) << fixed << setprecision(2) << monthlyTotal<<" |";
+            productTotal += monthlyTotal;
+        }
+        cout << setw(10) << fixed << setprecision(2) << productTotal<<endl;
+         }
+        cout << "\n";
+        }
 	return 0;
 }
