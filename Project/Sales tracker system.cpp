@@ -15,9 +15,15 @@ const int MAX_SALES_SLIPS = 100;        // Maximum number of sales slips
 const int MAX_DAYS = 365;               // Maximum number of days
 const int MAX_MONTHS = 12;              // Maximum number of months
 
-double salesData[MAX_DAYS][MAX_SALESPEOPLE][MAX_PRODUCTS] = {0};  // 2D array to store sales data 
-double totalSales[MAX_DAYS][MAX_SALESPEOPLE] = {0};    // 2D array to store total sales for each salesperson
-double totalProducts[MAX_DAYS][MAX_PRODUCTS] = {0};    // 2D array to store total products sold
+// 2D array to store sales data
+double salesData[MAX_DAYS][MAX_SALESPEOPLE][MAX_PRODUCTS] = {0}; 
+
+// 2D array to store total sales for each salesperson
+double totalSales[MAX_DAYS][MAX_SALESPEOPLE] = {0};
+
+// 2D array to store total products sold
+double totalProducts[MAX_DAYS][MAX_PRODUCTS] = {0};
+
 // Arrays to store details of sales slips
 int salespersonNumbers[MAX_SALES_SLIPS];       // Salesperson numbers
 int productNumbers[MAX_SALES_SLIPS];          // Product numbers
@@ -26,7 +32,10 @@ string salesDates[MAX_SALES_SLIPS];           // Sales dates
 int quantities[MAX_SALES_SLIPS];              // Quantities sold
 double unitPrices[MAX_SALES_SLIPS];           // Unit prices
 int salesCount = 0;                           // Count of sales slips
-double dailyUnitPrices[MAX_PRODUCTS] = {0};   // Array to store unit prices for daily sales of products
+
+// Array to store unit prices for daily sales of products
+double dailyUnitPrices[MAX_PRODUCTS] = {0};
+
 // Arrays to store salesperson details
 string salespersonNames[MAX_SALESPEOPLE];    // Names of salespeople
 string salespersonSex[MAX_SALESPEOPLE];      // Sex (M/F) of salespeople
@@ -267,9 +276,35 @@ else if (choice == 7) {
             }else{
             	cout<<"Product limit reached.\n";
 			}
-            
-	    
-      cout<<endl;
+	        } else if (choice == 9) {
+            // Modify salesperson details
+            int salesperson;
+            cout << "Enter salesperson number to modify: ";
+            cin >> salesperson;
+
+            if (salesperson >= 1 && salesperson <= numSalespeople) {
+                cout << "Modifying Salesperson " << salespersonNames[salesperson - 1] << " details:\n";
+                cout << "Name: ";
+                cin >> salespersonNames[salesperson - 1];
+                cout << "Sex (M/F): ";
+                cin >> salespersonSex[salesperson - 1];
+                cout << "Address: ";
+                cin >> salespersonAddresses[salesperson - 1];
+                sleep(1);
+                cout<<"Salesperson modified sucsessfuly.";
+            } else {
+                cout << "Invalid salesperson number.\n";
+            }
+        } else if (choice == 10) {
+            // Exit the system
+            cout << "Exiting the system. Goodbye!!!\n";
+            sleep(2);
+            break;
+        } else {
+            // Invalid choice
+            cout << "Invalid choice. Please try again.\n";
+        }
+         cout<<endl;
         sleep(2);
     }
 	return 0;
